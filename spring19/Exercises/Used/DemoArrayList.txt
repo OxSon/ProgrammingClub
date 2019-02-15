@@ -1,0 +1,42 @@
+/***********************
+*
+* Author: Ethan Darling
+* 
+***********************/
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class DemoArrayList {
+   public static void main(String[] args){
+      ArrayList<String> colors = new ArrayList<>();
+      colors.add("red");
+      colors.add("blue");
+      colors.add("yellow");
+      colors.add("green");
+      
+      System.out.println(colors);
+      colors.remove("blue");
+      System.out.printf("Index of green: %d\n", colors.indexOf("green"));
+      System.out.printf("Contains red: %b\n", colors.contains("red"));
+      System.out.printf("Index 0 is: %s%n", colors.get(0));
+      System.out.printf("Number of elements: %d%n", colors.size());
+
+      for(String element: colors) {
+         System.out.printf(element+ " %n");
+      }
+
+      String[] colors2 = {"red", "yellow", "blue"};
+      System.out.println(Arrays.toString(colors2));
+      colors.set(0, "pink");
+      colors2[0] = "pink";
+
+      System.out.println(colors.get(colors.size()-1));
+      System.out.println(colors2[colors2.length-1]);
+      System.out.printf("colors: %s%n", colors);
+      System.out.printf("colors2: %s%n", Arrays.toString(colors2));
+      
+      colors2[0] = colors.get(colors.size()-1);
+      colors.set(0, colors2[colors2.length-1]);
+      
+   }
+}
